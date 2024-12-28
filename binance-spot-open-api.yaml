@@ -447,7 +447,7 @@ paths:
 
           q = '0' // qty
 
-          f = -1 // ﬁrst_trade_id
+          f = -1 // first_trade_id
 
           l = -1 // last_trade_id
 
@@ -6829,7 +6829,7 @@ paths:
                     type: integer
                     format: int32
                     example: 0
-                    description: "0: normal, 1：system maintenance"
+                    description: "0: normal, 1: system maintenance"
                   msg:
                     type: string
                     example: "normal"
@@ -7179,7 +7179,7 @@ paths:
             type: string
         - name: walletType
           in: query
-          description: The wallet type for withdraw，0-Spot wallet, 1- Funding wallet. Default is Spot wallet
+          description: The wallet type for withdraw, 0-Spot wallet, 1- Funding wallet. Default is Spot wallet
           schema:
             type: integer
             format: int32
@@ -8244,15 +8244,15 @@ paths:
         - `toSymbol` must be sent when type are MARGIN_ISOLATEDMARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN
 
         ENUM of transfer types:
-          - MAIN_UMFUTURE Spot account transfer to USDⓈ-M Futures account
+          - MAIN_UMFUTURE Spot account transfer to USD(M)-M Futures account
           - MAIN_CMFUTURE Spot account transfer to COIN-M Futures account
           - MAIN_MARGIN Spot account transfer to Margin(cross)account
-          - UMFUTURE_MAIN USDⓈ-M Futures account transfer to Spot account
-          - UMFUTURE_MARGIN USDⓈ-M Futures account transfer to Margin(cross)account
+          - UMFUTURE_MAIN USD(M)-M Futures account transfer to Spot account
+          - UMFUTURE_MARGIN USD(M)-M Futures account transfer to Margin(cross)account
           - CMFUTURE_MAIN COIN-M Futures account transfer to Spot account
           - CMFUTURE_MARGIN COIN-M Futures account transfer to Margin(cross) account
           - MARGIN_MAIN Margin(cross)account transfer to Spot account
-          - MARGIN_UMFUTURE Margin(cross)account transfer to USDⓈ-M Futures
+          - MARGIN_UMFUTURE Margin(cross)account transfer to USD(M)-M Futures
           - MARGIN_CMFUTURE Margin(cross)account transfer to COIN-M Futures
           - ISOLATEDMARGIN_MARGIN Isolated margin account transfer to Margin(cross) account
           - MARGIN_ISOLATEDMARGIN Margin(cross) account transfer to Isolated margin account
@@ -8267,8 +8267,8 @@ paths:
           - CMFUTURE_FUNDING CMFUTURE account transfer to Funding account
           - MAIN_OPTION Spot account transfer to Options account
           - OPTION_MAIN Options account transfer to Spot account
-          - UMFUTURE_OPTION USDⓈ-M Futures account transfer to Options account
-          - OPTION_UMFUTURE Options account transfer to USDⓈ-M Futures account
+          - UMFUTURE_OPTION USD(M)-M Futures account transfer to Options account
+          - OPTION_UMFUTURE Options account transfer to USD(M)-M Futures account
           - MARGIN_OPTION Margin(cross)account transfer to Options account
           - OPTION_MARGIN Options account transfer to Margin(cross)account
           - FUNDING_OPTION Funding account transfer to Options account
@@ -8322,7 +8322,7 @@ paths:
     post:
       summary: Funding Wallet (USER_DATA)
       description: |-
-        - Currently supports querying the following business assets：Binance Pay, Binance Card, Binance Gift Card, Stock Token
+        - Currently supports querying the following business assets: Binance Pay, Binance Card, Binance Gift Card, Stock Token
 
         Weight(IP): 1
       tags:
@@ -13597,7 +13597,7 @@ paths:
                               type: integer
                               format: int64
                               example: 3
-                              description: "Status：1 valid, 2 invalid, 3 no longer valid"
+                              description: "Status: 1 valid, 2 invalid, 3 no longer valid"
                             hashRate:
                               type: integer
                               format: int64
@@ -13734,7 +13734,7 @@ paths:
                               type: integer
                               format: int32
                               example: 2
-                              description: "Status：0:Unpaid, 1:Paying  2：Paid"
+                              description: "Status: 0:Unpaid, 1:Paying  2: Paid"
                           required:
                             - time
                             - type
@@ -13838,7 +13838,7 @@ paths:
                               type: integer
                               format: int32
                               example: 2
-                              description: '0:Unpaid, 1:Paying  2：Paid'
+                              description: '0:Unpaid, 1:Paying  2: Paid'
                           required:
                             - time
                             - coinName
@@ -13948,7 +13948,7 @@ paths:
                               type: integer
                               format: int32
                               example: 1
-                              description: "0 Processing, 1：Cancelled, 2：Terminated "
+                              description: "0 Processing, 1: Cancelled, 2: Terminated "
                           required:
                             - configId
                             - poolUsername
@@ -14498,7 +14498,7 @@ paths:
         - name: type
           in: query
           required: true
-          description: "1: transfer from spot account to USDT-Ⓜ futures account. 2: transfer from USDT-Ⓜ futures account to spot account. 3: transfer from spot account to COIN-Ⓜ futures account. 4: transfer from COIN-Ⓜ futures account to spot account."
+          description: "1: transfer from spot account to USDT-(M) futures account. 2: transfer from USDT-(M) futures account to spot account. 3: transfer from spot account to COIN-(M) futures account. 4: transfer from COIN-(M) futures account to spot account."
           schema:
             type: integer
             format: int64
@@ -14678,7 +14678,7 @@ paths:
     post:
       summary: Volume Participation(VP) New Order (TRADE)
       description: |-
-        Send in a VP new order. Only support on USDⓈ-M Contracts.
+        Send in a VP new order. Only support on USD(M)-M Contracts.
 
         - You need to enable `Futures Trading Permission` for the api key which requests this endpoint.
         - Base URL: https://api.binance.com
@@ -14711,7 +14711,7 @@ paths:
             example: "LOW"
         - name: clientAlgoId
           in: query
-          description: "A unique id among Algo orders (length should be 32 characters)， If it is not sent, we will give default value"
+          description: "A unique id among Algo orders (length should be 32 characters), If it is not sent, we will give default value"
           schema:
             type: string
             example: "00358ce6a268403398bd34eaa36dffe7"
@@ -14773,7 +14773,7 @@ paths:
     post:
       summary: Time-Weighted Average Price(Twap) New Order (TRADE)
       description: |-
-        Send in a Twap new order. Only support on USDⓈ-M Contracts.
+        Send in a Twap new order. Only support on USD(M)-M Contracts.
 
         You need to enable Futures Trading Permission for the api key which requests this endpoint.
         Base URL: https://api.binance.com
@@ -14809,7 +14809,7 @@ paths:
             example: 300
         - name: clientAlgoId
           in: query
-          description: "A unique id among Algo orders (length should be 32 characters)， If it is not sent, we will give default value"
+          description: "A unique id among Algo orders (length should be 32 characters), If it is not sent, we will give default value"
           schema:
             type: string
             example: "00358ce6a268403398bd34eaa36dffe7"
@@ -16919,7 +16919,7 @@ paths:
                           example: "CNY"
                         fiatSymbol:
                           type: string
-                          example: "￥"
+                          example: "¥"
                         amount:
                           type: string
                           example: "5000.00000000"
@@ -19575,7 +19575,7 @@ paths:
                         orderType:
                           type: string
                           example: "C2C"
-                          description: "Enum：PAY(C2B Merchant Acquiring Payment), PAY_REFUND(C2B Merchant Acquiring Payment,refund), C2C(C2C Transfer Payment),CRYPTO_BOX(Crypto box), CRYPTO_BOX_RF(Crypto Box, refund), C2C_HOLDING(Transfer to new Binance user), C2C_HOLDING_RF(Transfer to new Binance user,refund), PAYOUT(B2C Disbursement Payment)"
+                          description: "Enum: PAY(C2B Merchant Acquiring Payment), PAY_REFUND(C2B Merchant Acquiring Payment,refund), C2C(C2C Transfer Payment),CRYPTO_BOX(Crypto box), CRYPTO_BOX_RF(Crypto Box, refund), C2C_HOLDING(Transfer to new Binance user), C2C_HOLDING_RF(Transfer to new Binance user,refund), PAYOUT(B2C Disbursement Payment)"
                         transactionId:
                           type: string
                           example: "M_P_71505104267788288"
@@ -19719,7 +19719,7 @@ paths:
     get:
       summary: List All Convert Pairs
       description: |-
-        Query for all convertible token pairs and the tokens’ respective upper/lower limits
+        Query for all convertible token pairs and the tokens' respective upper/lower limits
 
         Weight(IP): 3000
       tags:
@@ -20138,7 +20138,7 @@ paths:
         - ApiKeyAuth: []
       responses:
         '200':
-          description:
+          description: ""
           content:
             application/json:
               schema:
@@ -20518,7 +20518,7 @@ paths:
                               type: integer
                               format: int32
                               example: 1
-                              description: "rebate type：1 is commission rebate，2 is referral kickback"
+                              description: "rebate type: 1 is commission rebate,2 is referral kickback"
                             amount:
                               type: string
                               example: "0.0001126"
@@ -21163,7 +21163,7 @@ paths:
     post:
       summary: Buy a Binance Code (TRADE)
       description: |-
-        This API is for buying a fixed-value Binance Code, which means your Binance Code will be redeemable to a token that is different to the token that you are paying in. If the token you’re paying and the redeemable token are the same, please use the Create Binance Code endpoint.
+        This API is for buying a fixed-value Binance Code, which means your Binance Code will be redeemable to a token that is different to the token that you are paying in. If the token you're paying and the redeemable token are the same, please use the Create Binance Code endpoint.
         You can use supported crypto currency or fiat token as baseToken to buy Binance Code that is redeemable to your chosen faceToken.
         Once successfully purchased, the amount of baseToken would be deducted from your funding wallet.
 
@@ -27226,7 +27226,7 @@ components:
       name: workerName
       in: query
       required: true
-      description: Miner’s name
+      description: Miner's name
       schema:
         type: string
     blvtTokenName:
