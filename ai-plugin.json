@@ -5,7 +5,7 @@
   "description_for_human": "Fetch real-time Binance Spot market data.",
   "description_for_model": "Use this API to fetch  market data",
   "api": {
-    "url": "https://raw.githubusercontent.com/Shinisaru/binance-chatgpt-plugin/refs/heads/master/binance-spot-open-api.yaml"
+    "url": "https://shinisaru.github.io/binance-chatgpt-plugin/binance-spot-open-api.yaml"
   },
   "logo_url": "https://public.bnbstatic.com/20190405/eb2349c3-b2f8-4a93-a286-8f86a62ea9d8.png",
   "contact_email": "shinisaru@gmail.com",
